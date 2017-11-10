@@ -18,3 +18,4 @@ class TicTacToe
 end
 
 board = TicTacToe.new(" ")
+board.play
