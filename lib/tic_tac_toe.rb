@@ -130,12 +130,12 @@ def winner
 end
 
 def play
-  while over?(@board) == false && draw?(@board) == false
-    turn(@board)
+  while over? == false && draw? == false
+    turn
   end
-  if winner(@board)
+  if winner
     puts "Congratulations #{winner(board)}!"
-  elsif draw?(@board)
+  elsif draw?
     puts "Cat's Game!"
   end
 end
