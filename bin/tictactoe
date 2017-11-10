@@ -17,4 +17,4 @@ class TicTacToe
   end
 end
 
-board = TicTacToe.new.play("hahaha")
+TicTacToe.new.play
