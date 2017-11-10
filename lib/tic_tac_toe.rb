@@ -45,7 +45,7 @@ def position_taken? (index)
 end
 
 def valid_move?(input)
-  if input.between?(0, 8) && !(position_taken?(@board, input))
+  if input.between?(0, 8) && !(position_taken?(input))
     return true
   else
     return false
@@ -56,12 +56,12 @@ def turn
   puts "Please enter 1-9:"
   input = gets.strip
   input = input_to_index(input)
-  if valid_move?(@board, input) == true
-      move(@board, input, current_player(@board))
-      display_board(@board)
+  if valid_move?(input) == true
+      move(input, current_player)
+      display_board
   else
       puts "That is an invalid entry!"
-      turn(@board)
+      turn
   end
 end
 
@@ -74,7 +74,7 @@ def turn_count
 end
 
 def current_player
-  turn_num = turn_count(@board) + 1
+  turn_num = turn_count + 1
   if turn_num.even? == true
     return "O"
   else
@@ -106,7 +106,7 @@ def full?
 end
 
 def draw?
-  if !won?(@board) && full?(@board)
+  if !won? && full?
     return true
   else
     return false
