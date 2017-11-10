@@ -16,3 +16,5 @@ class TicTacToe
     @board
   end
 end
+
+TicTacToe.play 
